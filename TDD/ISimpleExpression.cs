@@ -2,5 +2,5 @@
 
 public interface ISimpleExpression
 {
-    
+    Money reduce(string to);
 }

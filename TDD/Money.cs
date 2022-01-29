@@ -11,7 +11,10 @@ public class Money : ISimpleExpression
         _currency = currency;
     }
 
-
+    public Money reduce(string to)
+    {
+        return this;
+    } 
     public Money times(int multiplier)
     {
         return new Money(multiplier * _amount,_currency);
