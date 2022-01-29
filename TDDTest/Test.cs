@@ -1,3 +1,5 @@
+using System;
+using System.Linq.Expressions;
 using NUnit.Framework;
 using TDD;
 
@@ -12,6 +14,17 @@ public class Tests
         Money five = Money.dollar(5);
         Assert.AreEqual(Money.dollar(10), five.times(2));
         Assert.AreEqual(Money.dollar(15),five.times(3));
+    }
+
+    [Test]
+    public void TestSimpleAddition()
+    {
+        Money five = Money.dollar(5);
+        ISimpleExpression sum = five.plus(five);
+        Assert.AreEqual(Money.dollar(10),sum);
+        Bank bank = new Bank();
+        Money reduced = bank.reduce(sum, "USD");
+        Assert.AreEqual(Money.dollar(10),reduced);
     }
     
     [Test]

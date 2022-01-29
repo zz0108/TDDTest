@@ -1,6 +1,6 @@
 ﻿namespace TDD;
 
-public class Money
+public class Money : ISimpleExpression
 {
     protected int _amount;
     protected string _currency;
@@ -15,6 +15,11 @@ public class Money
     public Money times(int multiplier)
     {
         return new Money(multiplier * _amount,_currency);
+    }
+
+    public ISimpleExpression plus(Money aaddend)
+    {
+        return new Money(_amount + aaddend._amount, _currency);
     }
 
     public static Money dollar(int amount)
