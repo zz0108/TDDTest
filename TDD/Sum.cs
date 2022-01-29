@@ -10,7 +10,7 @@ public class Sum : ISimpleExpression
     public Money augend { get; set; }
     public Money addend { get; set; }
 
-    public Money Reduce(string to)
+    public Money Reduce(Bank bank,string to)
     {
         int amount = augend._amount + addend._amount;
         return new Money(amount, to);

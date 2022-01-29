@@ -5,15 +5,16 @@ public class Money : ISimpleExpression
     public int _amount;
     protected string _currency;
     
+    
     public Money(int amount,string currency)
     {
         _amount = amount;
         _currency = currency;
     }
 
-    public Money Reduce(string to)
+    public Money Reduce(Bank bank,string to)
     {
-        int rate = _currency.Equals("CHF") && to.Equals("USD") ? 2 : 1;
+        int rate = bank.Rate(_currency, to);
         return new Money(_amount / rate,to);
     } 
     public Money Times(int multiplier)
