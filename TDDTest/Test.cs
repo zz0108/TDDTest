@@ -22,9 +22,9 @@ public class Tests
         ISimpleExpression fiveBucks = Money.dollar(5);
         ISimpleExpression tenFranc = Money.franc(10);
         Bank bank = new Bank();
-        bank.AddRate("CHF","USD",2);
+        bank.AddRate(CurrencyType.CHF,CurrencyType.USD,2);
         ISimpleExpression sum = new Sum(fiveBucks, tenFranc).Plus(fiveBucks);
-        Money result = bank.Reduce(sum, "USD");
+        Money result = bank.Reduce(sum, CurrencyType.USD);
         Assert.AreEqual(Money.dollar(15),result);
     }
 
@@ -34,9 +34,9 @@ public class Tests
         ISimpleExpression fiveBucks = Money.dollar(5);
         ISimpleExpression tenFranc = Money.franc(10);
         Bank bank = new Bank();
-        bank.AddRate("CHF","USD",2);
+        bank.AddRate(CurrencyType.CHF,CurrencyType.USD,2);
         ISimpleExpression sum = new Sum(fiveBucks, tenFranc).Times(2);
-        Money result = bank.Reduce(sum, "USD");
+        Money result = bank.Reduce(sum, CurrencyType.USD);
         Assert.AreEqual(Money.dollar(20),result);
     }
     
@@ -44,8 +44,8 @@ public class Tests
     public void TestReduceMoneyDifferentCurrency()
     {
         Bank bank = new Bank();
-        bank.AddRate("CHF","USD",2);
-        Money result = bank.Reduce(Money.franc(2), "USD");
+        bank.AddRate(CurrencyType.CHF,CurrencyType.USD,2);
+        Money result = bank.Reduce(Money.franc(2), CurrencyType.USD);
         Assert.AreEqual(Money.dollar(1),result);
     }
 
@@ -55,8 +55,8 @@ public class Tests
         ISimpleExpression fiveBucks = Money.dollar(5);
         ISimpleExpression tenFrancs = Money.franc(10);
         Bank bank = new Bank();
-        bank.AddRate("CHF", "USD", 2);
-        Money result = bank.Reduce(fiveBucks.Plus(tenFrancs), "USD");
+        bank.AddRate(CurrencyType.CHF, CurrencyType.USD, 2);
+        Money result = bank.Reduce(fiveBucks.Plus(tenFrancs), CurrencyType.USD);
         Assert.AreEqual(Money.dollar(10),result);
     }
     
@@ -66,7 +66,7 @@ public class Tests
         Money five = Money.dollar(5);
         ISimpleExpression sum = five.Plus(five);
         Bank bank = new Bank();
-        Money reduced = bank.Reduce(sum, "USD");
+        Money reduced = bank.Reduce(sum, CurrencyType.USD);
         Assert.AreEqual(Money.dollar(10),reduced);
     }
 
@@ -74,7 +74,7 @@ public class Tests
     public void TestReduceMoney()
     {
         Bank bank = new Bank();
-        Money result = bank.Reduce(Money.dollar(1), "USD");
+        Money result = bank.Reduce(Money.dollar(1), CurrencyType.USD);
         Assert.AreEqual(Money.dollar(1),result);
     }
     [Test]
@@ -82,10 +82,10 @@ public class Tests
     {
         ISimpleExpression sum = new Sum(Money.dollar(3), Money.dollar(4));
         Bank bank = new Bank();
-        Money result = bank.Reduce(sum, "USD");
+        Money result = bank.Reduce(sum, CurrencyType.USD);
         Assert.AreEqual(Money.dollar(7),result);
     }
-    
+
     [Test]
     public void TestPlusReturnsSum()
     {
@@ -116,7 +116,7 @@ public class Tests
     [Test]
     public void TestCurrency()
     {
-        Assert.AreEqual("USD",Money.dollar(1).Currency());
-        Assert.AreEqual("CHF",Money.franc(1).Currency());
+        Assert.AreEqual(CurrencyType.USD,Money.dollar(1).Currency());
+        Assert.AreEqual(CurrencyType.CHF,Money.franc(1).Currency());
     }
 }

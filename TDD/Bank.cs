@@ -8,10 +8,10 @@ public class Bank
     private Dictionary<Pair,int> rates = new Dictionary<Pair,int>();
     private class Pair
     {
-        private string _from { get; set; }
-        private string _to { get; set; }
+        private CurrencyType _from { get; set; }
+        private CurrencyType _to { get; set; }
 
-        public Pair(string from, string to)
+        public Pair(CurrencyType from, CurrencyType to)
         {
             _from = from;
             _to = to;
@@ -28,16 +28,16 @@ public class Bank
             return 0;
         }
     }
-    public Money Reduce(ISimpleExpression source, string to)
+    public Money Reduce(ISimpleExpression source, CurrencyType to)
     {
         return source.Reduce(this,to);
     }
 
-    public void AddRate(string from, string to,int rate)
+    public void AddRate(CurrencyType from, CurrencyType to,int rate)
     {
         rates.Add(new Pair(from,to), rate);
     }
-    public int Rate(string from, string to)
+    public int Rate(CurrencyType from, CurrencyType to)
     {
         if (from.Equals(to)) return 1;
         int rate = rates.GetValueOrDefault(new Pair(from, to));
