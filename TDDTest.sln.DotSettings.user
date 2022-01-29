@@ -1,6 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fbd0a6cb_002Ddb9c_002D4609_002D845c_002Db563a6569c73/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="testMaltiplication" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::427E2E3B-6B46-409E-9E63-9B4B4156BBDC::net6.0::TDDTest.Tests.testMaltiplication&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::427E2E3B-6B46-409E-9E63-9B4B4156BBDC::net6.0::TDDTest.Tests.TestEquality&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
