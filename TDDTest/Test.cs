@@ -31,4 +31,11 @@ public class Tests
         Assert.False(Money.franc(5).Equals(Money.franc(6)));
         Assert.False(Money.franc(5).Equals(Money.dollar(5)));
     }
+
+    [Test]
+    public void TestCurrency()
+    {
+        Assert.AreEqual("USD",Money.dollar(1).Currency());
+        Assert.AreEqual("CHF",Money.franc(1).Currency());
+    }
 }

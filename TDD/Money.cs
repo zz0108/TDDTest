@@ -6,6 +6,8 @@ public abstract class Money
 
     public abstract Money times(int multiplier);
 
+    public abstract string Currency();
+
     public static Money dollar(int amount)
     {
         return new Dollar(amount);
