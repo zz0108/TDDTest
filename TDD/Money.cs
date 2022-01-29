@@ -17,12 +17,12 @@ public class Money : ISimpleExpression
         int rate = bank.Rate(_currency, to);
         return new Money(_amount / rate,to);
     } 
-    public Money Times(int multiplier)
+    public ISimpleExpression Times(int multiplier)
     {
         return new Money(multiplier * _amount,_currency);
     }
 
-    public ISimpleExpression Plus(Money addend)
+    public ISimpleExpression Plus(ISimpleExpression addend)
     {
         return new Sum(this,addend);
     }

@@ -28,8 +28,8 @@ public class Tests
     [Test]
     public void TestMixedAddition()
     {
-        Money fiveBucks = Money.dollar(5);
-        Money tenFrancs = Money.franc(10);
+        ISimpleExpression fiveBucks = Money.dollar(5);
+        ISimpleExpression tenFrancs = Money.franc(10);
         Bank bank = new Bank();
         bank.AddRate("CHF", "USD", 2);
         Money result = bank.Reduce(fiveBucks.Plus(tenFrancs), "USD");
