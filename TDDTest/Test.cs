@@ -10,10 +10,8 @@ public class Tests
     public void TestMaltiplication()
     {
         Dollar five = new Dollar(5);
-        Dollar product = five.times(2);
-        Assert.AreEqual(10, product.amount);
-        product = five.times(3);
-        Assert.AreEqual(15,product.amount);
+        Assert.AreEqual(new Dollar(10), five.times(2));
+        Assert.AreEqual(new Dollar(15),five.times(3));
     }
 
     [Test]
