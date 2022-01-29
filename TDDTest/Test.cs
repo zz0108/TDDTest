@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using TDD;
 
 namespace TDDTest;
 
@@ -6,7 +7,7 @@ namespace TDDTest;
 public class Tests
 {
     [Test]
-    public void Test1()
+    public void testMaltiplication()
     {
         Dollar five = new Dollar(5);
         five.times(2);

@@ -1,0 +1,12 @@
+C:\Users\nn125\RiderProjects\TDDTest\TDD\bin\Debug\net6.0\TDD.deps.json
+C:\Users\nn125\RiderProjects\TDDTest\TDD\bin\Debug\net6.0\TDD.dll
+C:\Users\nn125\RiderProjects\TDDTest\TDD\bin\Debug\net6.0\ref\TDD.dll
+C:\Users\nn125\RiderProjects\TDDTest\TDD\bin\Debug\net6.0\TDD.pdb
+C:\Users\nn125\RiderProjects\TDDTest\TDD\obj\Debug\net6.0\TDD.csproj.AssemblyReference.cache
+C:\Users\nn125\RiderProjects\TDDTest\TDD\obj\Debug\net6.0\TDD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nn125\RiderProjects\TDDTest\TDD\obj\Debug\net6.0\TDD.AssemblyInfoInputs.cache
+C:\Users\nn125\RiderProjects\TDDTest\TDD\obj\Debug\net6.0\TDD.AssemblyInfo.cs
+C:\Users\nn125\RiderProjects\TDDTest\TDD\obj\Debug\net6.0\TDD.csproj.CoreCompileInputs.cache
+C:\Users\nn125\RiderProjects\TDDTest\TDD\obj\Debug\net6.0\TDD.dll
+C:\Users\nn125\RiderProjects\TDDTest\TDD\obj\Debug\net6.0\ref\TDD.dll
+C:\Users\nn125\RiderProjects\TDDTest\TDD\obj\Debug\net6.0\TDD.pdb

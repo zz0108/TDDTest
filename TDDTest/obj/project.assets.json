@@ -882,6 +882,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "TDD/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TDD.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TDD.dll": {}
+        }
       }
     }
   },
@@ -3843,6 +3853,11 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "TDD/1.0.0": {
+      "type": "project",
+      "path": "../TDD/TDD.csproj",
+      "msbuildProject": "../TDD/TDD.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3850,6 +3865,7 @@
       "Microsoft.NET.Test.Sdk >= 16.11.0",
       "NUnit >= 3.13.2",
       "NUnit3TestAdapter >= 4.0.0",
+      "TDD >= 1.0.0",
       "coverlet.collector >= 3.1.0"
     ]
   },
@@ -3889,7 +3905,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\nn125\\RiderProjects\\TDDTest\\TDD\\TDD.csproj": {
+              "projectPath": "C:\\Users\\nn125\\RiderProjects\\TDDTest\\TDD\\TDD.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
