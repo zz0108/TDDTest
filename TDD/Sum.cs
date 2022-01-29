@@ -12,7 +12,7 @@ public class Sum : ISimpleExpression
 
     public Money Reduce(Bank bank,string to)
     {
-        int amount = augend._amount + addend._amount;
+        int amount = augend.Reduce(bank,to)._amount + addend.Reduce(bank,to)._amount;
         return new Money(amount, to);
     }
 }
