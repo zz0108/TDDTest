@@ -17,6 +17,17 @@ public class Tests
     }
 
     [Test]
+    public void TestSumPlusMoney()
+    {
+        ISimpleExpression fiveBucks = Money.dollar(5);
+        ISimpleExpression tenFranc = Money.franc(10);
+        Bank bank = new Bank();
+        bank.AddRate("CHF","USD",2);
+        ISimpleExpression sum = new Sum(fiveBucks, tenFranc).Plus(fiveBucks);
+        Money result = bank.Reduce(sum, "USD");
+        Assert.AreEqual(Money.dollar(15),result);
+    }
+    [Test]
     public void TestReduceMoneyDifferentCurrency()
     {
         Bank bank = new Bank();

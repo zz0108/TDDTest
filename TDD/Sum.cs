@@ -18,6 +18,6 @@ public class Sum : ISimpleExpression
 
     public ISimpleExpression Plus(ISimpleExpression addend)
     {
-        return null;
+        return new Sum(this,addend);
     }
 }
