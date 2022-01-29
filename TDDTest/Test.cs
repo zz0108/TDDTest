@@ -17,6 +17,14 @@ public class Tests
     }
 
     [Test]
+    public void TestReduceMoneyDifferentCurrency()
+    {
+        Bank bank = new Bank();
+        Money result = bank.Reduce(Money.franc(2), "USD");
+        Assert.AreEqual(Money.dollar(1),result);
+    }
+    
+    [Test]
     public void TestSimpleAddition()
     {
         Money five = Money.dollar(5);
