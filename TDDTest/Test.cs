@@ -20,6 +20,7 @@ public class Tests
     public void TestReduceMoneyDifferentCurrency()
     {
         Bank bank = new Bank();
+        bank.AddRate("CHF","USD",2);
         Money result = bank.Reduce(Money.franc(2), "USD");
         Assert.AreEqual(Money.dollar(1),result);
     }
