@@ -1,6 +1,6 @@
 ﻿namespace TDD;
 
-public abstract class Money
+public class Money
 {
     protected int _amount;
     protected string _currency;
@@ -12,7 +12,10 @@ public abstract class Money
     }
 
 
-    public abstract Money times(int multiplier);
+    public Money times(int multiplier)
+    {
+        return new Money(multiplier * _amount,_currency);
+    }
 
     public static Money dollar(int amount)
     {
@@ -32,6 +35,6 @@ public abstract class Money
     public override bool Equals(object obj)
     {
         Money money = (Money)obj;
-        return _amount == money._amount && GetType().Equals(money.GetType());
+        return _amount == money._amount && Currency().Equals(money._currency);
     }
 }

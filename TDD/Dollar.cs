@@ -6,9 +6,4 @@ public class Dollar : Money
     {
         
     }
-
-    public override Money times(int multiplier)
-    {
-        return dollar(_amount * multiplier);
-    }
 }
