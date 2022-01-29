@@ -2,7 +2,7 @@
 
 public class Money : ISimpleExpression
 {
-    protected int _amount;
+    public int _amount;
     protected string _currency;
     
     public Money(int amount,string currency)
@@ -17,9 +17,9 @@ public class Money : ISimpleExpression
         return new Money(multiplier * _amount,_currency);
     }
 
-    public ISimpleExpression plus(Money aaddend)
+    public ISimpleExpression plus(Money addend)
     {
-        return new Money(_amount + aaddend._amount, _currency);
+        return new Sum(this,addend);
     }
 
     public static Money dollar(int amount)

@@ -21,12 +21,36 @@ public class Tests
     {
         Money five = Money.dollar(5);
         ISimpleExpression sum = five.plus(five);
-        Assert.AreEqual(Money.dollar(10),sum);
         Bank bank = new Bank();
         Money reduced = bank.reduce(sum, "USD");
         Assert.AreEqual(Money.dollar(10),reduced);
     }
+
+    [Test]
+    public void TestReduceMoney()
+    {
+        Bank bank = new Bank();
+        Money result = bank.reduce(Money.dollar(1), "USD");
+        Assert.AreEqual(Money.dollar(1),result);
+    }
+    [Test]
+    public void TestReduceSum()
+    {
+        ISimpleExpression sum = new Sum(Money.dollar(3), Money.dollar(4));
+        Bank bank = new Bank();
+        Money result = bank.reduce(sum, "USD");
+        Assert.AreEqual(Money.dollar(7),result);
+    }
     
+    [Test]
+    public void TestPlusReturnsSum()
+    {
+        Money five = Money.dollar(5);
+        ISimpleExpression result = five.plus(five);
+        Sum sum = (Sum)result;
+        Assert.AreEqual(five,sum.augend);
+        Assert.AreEqual(five,sum.addend);
+    }
     [Test]
     public void TestFrancMaltiplication()
     {
