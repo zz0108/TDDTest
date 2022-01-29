@@ -2,7 +2,6 @@
 
 public class Dollar : Money
 {
-    private string currency;
     public Dollar(int amount)
     {
         this.amount = amount;
@@ -12,10 +11,5 @@ public class Dollar : Money
     public override Money times(int multiplier)
     {
         return new Dollar(amount * multiplier);
-    }
-
-    public override string Currency()
-    {
-        return currency;
     }
 }
