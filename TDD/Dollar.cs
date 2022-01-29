@@ -1,10 +1,8 @@
-﻿using System.Net;
-
-namespace TDD;
+﻿namespace TDD;
 
 public class Dollar
 {
-    private int amount;
+    public int amount;
     
     public Dollar(int amount)
     {
