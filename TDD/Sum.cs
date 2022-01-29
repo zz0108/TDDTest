@@ -20,4 +20,9 @@ public class Sum : ISimpleExpression
     {
         return new Sum(this,addend);
     }
+
+    public ISimpleExpression Times(int multiplier)
+    {
+        return new Sum(augend.Times(multiplier), addend.Times(multiplier));
+    }
 }

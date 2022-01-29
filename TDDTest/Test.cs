@@ -27,6 +27,19 @@ public class Tests
         Money result = bank.Reduce(sum, "USD");
         Assert.AreEqual(Money.dollar(15),result);
     }
+
+    [Test]
+    public void TestSumTimes()
+    {
+        ISimpleExpression fiveBucks = Money.dollar(5);
+        ISimpleExpression tenFranc = Money.franc(10);
+        Bank bank = new Bank();
+        bank.AddRate("CHF","USD",2);
+        ISimpleExpression sum = new Sum(fiveBucks, tenFranc).Times(2);
+        Money result = bank.Reduce(sum, "USD");
+        Assert.AreEqual(Money.dollar(20),result);
+    }
+    
     [Test]
     public void TestReduceMoneyDifferentCurrency()
     {
