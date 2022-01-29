@@ -2,8 +2,8 @@
 
 public class Bank
 {
-    public Money reduce(ISimpleExpression source, string to)
+    public Money Reduce(ISimpleExpression source, string to)
     {
-        return source.reduce(to);
+        return source.Reduce(to);
     }
 }

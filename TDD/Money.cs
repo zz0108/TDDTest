@@ -11,16 +11,17 @@ public class Money : ISimpleExpression
         _currency = currency;
     }
 
-    public Money reduce(string to)
+    public Money Reduce(string to)
     {
-        return this;
+        int rate = _currency.Equals("CHF") && to.Equals("USD") ? 2 : 1;
+        return new Money(_amount / rate,to);
     } 
-    public Money times(int multiplier)
+    public Money Times(int multiplier)
     {
         return new Money(multiplier * _amount,_currency);
     }
 
-    public ISimpleExpression plus(Money addend)
+    public ISimpleExpression Plus(Money addend)
     {
         return new Sum(this,addend);
     }

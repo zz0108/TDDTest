@@ -12,17 +12,17 @@ public class Tests
     public void TestMaltiplication()
     {
         Money five = Money.dollar(5);
-        Assert.AreEqual(Money.dollar(10), five.times(2));
-        Assert.AreEqual(Money.dollar(15),five.times(3));
+        Assert.AreEqual(Money.dollar(10), five.Times(2));
+        Assert.AreEqual(Money.dollar(15),five.Times(3));
     }
 
     [Test]
     public void TestSimpleAddition()
     {
         Money five = Money.dollar(5);
-        ISimpleExpression sum = five.plus(five);
+        ISimpleExpression sum = five.Plus(five);
         Bank bank = new Bank();
-        Money reduced = bank.reduce(sum, "USD");
+        Money reduced = bank.Reduce(sum, "USD");
         Assert.AreEqual(Money.dollar(10),reduced);
     }
 
@@ -30,7 +30,7 @@ public class Tests
     public void TestReduceMoney()
     {
         Bank bank = new Bank();
-        Money result = bank.reduce(Money.dollar(1), "USD");
+        Money result = bank.Reduce(Money.dollar(1), "USD");
         Assert.AreEqual(Money.dollar(1),result);
     }
     [Test]
@@ -38,7 +38,7 @@ public class Tests
     {
         ISimpleExpression sum = new Sum(Money.dollar(3), Money.dollar(4));
         Bank bank = new Bank();
-        Money result = bank.reduce(sum, "USD");
+        Money result = bank.Reduce(sum, "USD");
         Assert.AreEqual(Money.dollar(7),result);
     }
     
@@ -46,7 +46,7 @@ public class Tests
     public void TestPlusReturnsSum()
     {
         Money five = Money.dollar(5);
-        ISimpleExpression result = five.plus(five);
+        ISimpleExpression result = five.Plus(five);
         Sum sum = (Sum)result;
         Assert.AreEqual(five,sum.augend);
         Assert.AreEqual(five,sum.addend);
@@ -55,8 +55,8 @@ public class Tests
     public void TestFrancMaltiplication()
     {
         Money five = Money.franc(5);
-        Assert.AreEqual(Money.franc(10), five.times(2));
-        Assert.AreEqual(Money.franc(15),five.times(3));
+        Assert.AreEqual(Money.franc(10), five.Times(2));
+        Assert.AreEqual(Money.franc(15),five.Times(3));
     }
 
     [Test]
